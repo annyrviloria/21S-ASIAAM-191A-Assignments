@@ -1,12 +1,1 @@
-## Due Thursday 4/8:
-
-1.  Calculate a new field using already existing fields in the `CA_Counties_2019.shp` dataset or another dataset of your choosing.
-
-2. Create a geojson named `lab1.geojson` and add it to your repository.
-
-3. Create a new markdown file called `lab1.md` and explain the following:
-   -  What fields you used
-   -  Why you used these fields
-   -  What problems could the data set have
-4. Commit both `lab1.geojson` and `lab1.md` to your repository and push it to GitHub.
-5. Fill out this form so I can associate you with your GitHub repo: [https://forms.gle/J8kebeHEd5xbGaiRA](https://forms.gle/J8kebeHEd5xbGaiRA)
+For my lab1 assignment I created a new field called 'BIPOC_PCT' (percentage of people of color in a given county). I first created a field called 'BIPOC_POP' which adds up the total population of all non-white groups listed in the file, including 'mixed' and 'other'. I chose to create the BIPOC_PCT field because I was interested in displaying how diverse different counties in California are. Further, I think this type of diversity scale can be very informative when compared to other state-wide indicators such as wealth, emplyoyment, environmental pollutants, public investment in infrastructure, etc. One potential problem this dataset might have is undercounting of rural/migrant farm workers/undocumented folks -- populations who have traditionally been left out or who have reasonable fear to be counted in official statistics.
