@@ -18,7 +18,7 @@ html, body {
  .header {
     justify-content: center;
     text-align: center;
-    color: rgb(29, 95, 58); }
+    color:teal; }
     
 .main {
     display: grid;
