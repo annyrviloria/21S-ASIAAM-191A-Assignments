@@ -1,13 +1,16 @@
 html, body {
-    padding: 5px;
+    padding: 8px;
  }
 
  body {
      display: grid;
      grid-template-rows: .1fr .30fr .60fr .05fr;
      grid-template-columns: 1fr;
-     grid-template-areas: "header" "main" "map"  "footer";
+     grid-template-areas: "header" "main1" "main2" "map"  "footer";
      justify-content: center;
+     background-color:lemonchiffon;
+     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
  }
 
  header {
@@ -15,12 +18,19 @@ html, body {
     display: grid;
     grid-template-columns: .2fr .6fr .2fr;
     justify-content: center;
- }
-
-.main {
+    color: rgb(29, 95, 58); }
+    
+.main1 {
     display: grid;
     grid-area: main;
-    background-color: aqua;
+
+}
+
+.main2 {
+    display: grid;
+    grid-area: main;
+
+
 }
 
 #map {
