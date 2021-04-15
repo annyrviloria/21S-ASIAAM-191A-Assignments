@@ -1,5 +1,5 @@
 html, body {
-    padding: 5px;
+    padding: 40px;
  }
 
  body {
@@ -9,15 +9,15 @@ html, body {
      grid-template-areas: "header" "main" "map" "footer";
      justify-content: center;
      background-color:lemonchiffon;
+     border-color: teal;
+     border-style: solid;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
  }
 
- header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: .2fr .6fr .2fr;
+ .header {
     justify-content: center;
+    text-align: center;
     color: rgb(29, 95, 58); }
     
 .main {
@@ -26,7 +26,13 @@ html, body {
     justify-content: center;
 
 }
-
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 50%;
+  }
 
 #map {
     grid-area: map;
