@@ -8,7 +8,7 @@ html, body {
      grid-template-columns: 1fr;
      grid-template-areas: "header" "main" "map" "footer";
      justify-content: center;
-     background-color:lemonchiffon;
+     background-color:rgb(248, 244, 196);
      border-color: teal;
      border-style: solid;
      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
