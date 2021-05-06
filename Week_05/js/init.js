@@ -11,7 +11,7 @@ function addMarker(data){
       color: 'orange',
       fillColor: '#f03',
       fillOpacity: 0.5,
-      radius: 800
+      radius: 400
     }).addTo(map).bindPopup(`<h2>${data.bestdish}</h2>`+`<p><b>Location:</b>${data.whereisitat}</p>`+`<p><b>Name or Description:</b>${data.name}</p>`+`<p><b>How did you find it:</b>${data.yourstory}</p>`)
     return data.timestamp
 }
