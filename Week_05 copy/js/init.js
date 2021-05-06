@@ -1,4 +1,4 @@
-const map = L.map('map').setView([34.008460, -118.112412], 11);
+const map = L.map('map').setView([34.0709, -118.444], 5);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -7,16 +7,11 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function addMarker(data){
     // console.log(data)
     // these are the names of our fields in the google sheets:
-    L.circle([data.lat,data.lng],{
-      color: 'orange',
-      fillColor: '#f03',
-      fillOpacity: 0.5,
-      radius: 800
-    }).addTo(map).bindPopup(`<h2>${data.bestdish}</h2>`+`<p><b>Location:</b>${data.whereisitat}</p>`+`<p><b>Name or Description:</b>${data.name}</p>`+`<p><b>How did you find it:</b>${data.yourstory}</p>`)
+    L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.timestamp}</h2>`)
     return data.timestamp
 }
 
-let url = "https://spreadsheets.google.com/feeds/list/1xt-lCSYFOzw85POmGwsBTwxcOa7oua5wIMziNFvvzcQ/oxk2v35/public/values?alt=json"
+let url = "https://spreadsheets.google.com/feeds/list/1gB_pIq1Y0WGMzJjC8qPA5oGT6sDAfkhZLL_ag1GL3j8/oiz5byp/public/values?alt=json"
 fetch(url)
 	.then(response => {
 		return response.json();
