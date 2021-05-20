@@ -1,0 +1,57 @@
+body{
+    display:grid;
+    grid-template-rows: .2fr .8fr .05fr;
+    grid-template-columns: .2fr 1fr; 
+    grid-template-areas: "header survey" "contentpanel mappanel" "footer footer";
+    grid-gap: 1em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+#contents{
+    grid-area: contentpanel;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+}
+
+header{
+    grid-area: header;
+    position: relative;
+}
+
+survey{
+    grid-area: survey;
+}
+
+footer{
+    grid-area: footer;
+}
+
+#map{
+    height:90vh;
+    grid-area: mappanel;
+} 
+
+#header img {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
+
+h1 {
+    font-size: 48px;
+    color:rgb(66, 22, 1);
+}
+
+p1 {
+    font-size: 20px;
+    color: rgb(44, 9, 9);
+}
+
+p2 {
+    font-size: 20px;
+    color:sienna;
+}
