@@ -1,4 +1,4 @@
-const map = L.map('map').setView([34.0709, -118.444], 5);
+const map = L.map('map').setView([34.008460, -118.112412], 15);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -7,11 +7,30 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 function addMarker(data){
     // console.log(data)
     // these are the names of our fields in the google sheets:
-    L.marker([data.lat,data.lng]).addTo(map).bindPopup(`<h2>${data.timestamp}</h2>`)
+    L.circle([data.lat,data.lng],{
+      color: 'orange',
+      fillColor: '#f03',
+      fillOpacity: 0.5,
+      radius: 400
+    }).addTo(map).bindPopup(`<h2>${data.bestdish}</h2>`+`<p><b>Location:</b>${data.whereisitat}</p>`+`<p><b>Name or Description:</b>${data.name}</p>`+`<p><b>How did you find it:</b>${data.yourstory}</p>`)
+    createButtons(data.lat,data.lng,data.bestdish)
     return data.timestamp
 }
 
-let url = "https://spreadsheets.google.com/feeds/list/1gB_pIq1Y0WGMzJjC8qPA5oGT6sDAfkhZLL_ag1GL3j8/oiz5byp/public/values?alt=json"
+function createButtons(lat,lng,title){
+  const newButton = document.createElement("button"); // adds a new button
+  newButton.id = "button"+title; // gives the button a unique id
+  newButton.innerHTML = title; // gives the button a title
+  newButton.setAttribute("lat",lat); // sets the latitude 
+  newButton.setAttribute("lng",lng); // sets the longitude 
+  newButton.addEventListener('click', function(){
+      map.flyTo([lat,lng]); //this is the flyTo from Leaflet
+  })
+  const SpaceForButtons = document.getElementById('contents')
+  SpaceForButtons.appendChild(newButton); //this adds the button to our page.
+}
+
+let url = "https://spreadsheets.google.com/feeds/list/1xt-lCSYFOzw85POmGwsBTwxcOa7oua5wIMziNFvvzcQ/oxk2v35/public/values?alt=json"
 fetch(url)
 	.then(response => {
 		return response.json();
