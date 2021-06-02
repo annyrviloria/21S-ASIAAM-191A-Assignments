@@ -24,7 +24,7 @@ let thelayers = {
     "Open during nightime": Nightime
 } 
 // add layer control box
-L.control.layers(null,thelayers).addTo(map)
+L.control.layers(null,thelayers,{collapsed:false}).addTo(map)
 
 function addMarker(data){
     let circleOptions ={
